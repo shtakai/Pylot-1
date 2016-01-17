@@ -1,11 +1,15 @@
-"""
-    Routes Configuration File
 
-    Put Routing rules here
-"""
-from system.core.router import route
+from system.core.router import routes
 
-# TODO: Move initialization method to init folder and create a more "User Friendly" system for defining routes (see codeigniter routes)
-def initialize_routes(app):
-    from app.controllers.WelcomeController import WelcomeController
-    route(app, 'index', '/', WelcomeController, 'index')
+
+routes['default_controller'] = 'Welcome'
+
+"""
+    routes['GET']['/users'] = 'users#index'
+    routes['GET']['/users/new'] = 'users#new'
+    routes['POST']['/users'] = 'users#create'
+    routes['GET']['/users/<int:id>'] = 'users#show'
+    routes['GET']['/users/<int:id>/edit' = 'users#edit'
+    routes['PATCH']['/users/<int:id>'] = 'users#update'
+    routes['DELETE']['/users/<int:id>'] = 'users#destroy'
+"""
